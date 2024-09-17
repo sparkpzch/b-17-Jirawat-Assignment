@@ -13,7 +13,7 @@ public class SuperHero : MonoBehaviour
         {
             if (value == "" || value.Length < 3 || value.Length > 20 || value == null)
             {
-                heroName = "Invalid Name";
+                heroName = "N/A";
                 Debug.LogError("Invalid hero name. Please enter a name between 3 and 20 characters.");
             }
             else
@@ -39,14 +39,6 @@ public class SuperHero : MonoBehaviour
     public float GetArmorStrength
     {
         get { return heroArmorStrength; }
-    }
-
-    // Constructor
-    public SuperHero(string newHeroName, int newHealth, string newSuitColor)
-    {
-        heroName = newHeroName;
-        heroHealth = newHealth;
-        heroSuitColor = newSuitColor;
     }
 
     public void UpdateArmorStrength(float newArmorStrength)

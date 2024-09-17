@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class IronMan : SuperHero
 {
-    public IronMan(string newHeroName, int newHealth, string newSuitColor)
-    : base(newHeroName, newHealth, newSuitColor)
-    {
-
-    }
 
     public void Fly()
     {
