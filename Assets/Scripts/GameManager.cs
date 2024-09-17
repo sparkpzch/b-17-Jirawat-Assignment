@@ -9,8 +9,10 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        Debug.Log($"{ironMan.heroName} has {ironMan.heroHealth} health and wears a {ironMan.heroSuitColor} suit.");
-        Debug.Log($"{captainAmerica.heroName} has {captainAmerica.heroHealth} health and wears a {captainAmerica.heroSuitColor} suit.");
+        ironMan.Name = "LungTony";
+
+        Debug.Log($"{ironMan.Name} has {ironMan.GetHealth} health and wears a {ironMan.GetSuitColor} suit.");
+        Debug.Log($"{captainAmerica.Name} has {captainAmerica.GetHealth} health and wears a {captainAmerica.GetSuitColor} suit.");
 
         ironMan.UpdateArmorStrength(5.25f);
         captainAmerica.UpdateArmorStrength(5.5f);
