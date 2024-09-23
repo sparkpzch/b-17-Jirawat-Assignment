@@ -4,36 +4,31 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public IronMan ironMan;
-    public CaptainAmerica captainAmerica;
+    Cat cat;
+    Dog dog;
+    Rabbit rabbit;
 
     void Start()
     {
-        ironMan.Name = "LungTony";
+        cat = FindAnyObjectByType<Cat>();
+        dog = FindAnyObjectByType<Dog>();
+        rabbit = FindAnyObjectByType<Rabbit>();
 
-        Debug.Log($"{ironMan.Name} has {ironMan.GetHealth} health and wears a {ironMan.GetSuitColor} suit.");
-        Debug.Log($"{captainAmerica.Name} has {captainAmerica.GetHealth} health and wears a {captainAmerica.GetSuitColor} suit.");
-
-        ironMan.UpdateArmorStrength(5.25f);
-        captainAmerica.UpdateArmorStrength(5.5f);
-    }
-
-    void Update()
-    {
-        if (ironMan.IsDead() || captainAmerica.IsDead())
-        {
-            return;
-        }
-
-        // Iron Man's turn
-        int randomDamage = Random.Range(10, 21);
-        ironMan.ShootLaser();
-        captainAmerica.TakeDamage(randomDamage);
-
-
-        // Captain America's turn
-        randomDamage = Random.Range(10, 21);
-        captainAmerica.ThrowShield();
-        ironMan.TakeDamage(randomDamage);
+        Debug.Log($"{cat.CatName} has health : {cat.Health} , Speed : {cat.speed} , Hunger : {cat.GetHunger()}");
+        cat.Eat("Meat");
+        cat.Climb();
+        cat.Move();
+        cat.Sleep();
+        Debug.Log("-------------------------------------------------");
+        Debug.Log($"{dog.DogName} has health : {dog.Health} , Speed : {dog.speed} , Hunger : {dog.GetHunger()}");
+        dog.Eat("Meat");
+        dog.Move();
+        dog.Sleep();
+        dog.Fetch();
+        Debug.Log("-------------------------------------------------");
+        Debug.Log($"{rabbit.RabbitName} has health : {rabbit.Health} , Speed : {rabbit.speed} , Hunger : {rabbit.GetHunger()}");
+        rabbit.Eat("Plants");
+        rabbit.Move();
+        rabbit.Sleep();
     }
 }
